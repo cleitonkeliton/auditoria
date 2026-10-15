@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1f4e79">
+  <title>Auditoria</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <button id="btn-voltar" class="icon-btn" aria-label="Voltar" hidden>&#8592;</button>
+    <div class="titulos">
+      <h1 id="titulo">Auditoria</h1>
+      <div id="subtitulo" class="subtitulo"></div>
+    </div>
+    <button id="btn-sync" class="sync-btn" aria-label="Sincronizar com a planilha">
+      <span id="sync-icone">&#8635;</span>
+      <span id="sync-badge" class="badge" hidden>0</span>
+    </button>
+  </header>
+
+  <main id="app"></main>
+
+  <div id="scanner" class="scanner" hidden>
+    <video id="scanner-video" playsinline muted></video>
+    <div class="scanner-mira"></div>
+    <div class="scanner-rodape">
+      <p>Aponte a câmera para o código de barras do tombamento</p>
+      <button id="scanner-fechar" class="btn btn-claro">Cancelar</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="lib/zxing.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
