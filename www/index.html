@@ -22,18 +22,21 @@
 
   <main id="app"></main>
 
+  <!-- Leitor com a câmera do app: a imagem da câmera fica atrás da página, que fica transparente. -->
   <div id="scanner" class="scanner" hidden>
-    <video id="scanner-video" playsinline muted></video>
     <div class="scanner-mira"></div>
+    <p id="scanner-texto" class="scanner-texto">Aponte para o código de barras do tombamento</p>
     <div class="scanner-rodape">
-      <p>Aponte a câmera para o código de barras do tombamento</p>
-      <button id="scanner-fechar" class="btn btn-claro">Cancelar</button>
+      <button id="scanner-lanterna" class="btn btn-claro" hidden>&#128294; Lanterna</button>
+      <button id="scanner-fechar" class="btn btn-claro">Cancelar e digitar</button>
     </div>
   </div>
 
   <div id="toast" class="toast" hidden></div>
 
-  <script src="lib/zxing.min.js"></script>
+  <script src="lib/capacitor.js"></script>
+  <script src="lib/capacitor-app.js"></script>
+  <script src="lib/barcode-scanning.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

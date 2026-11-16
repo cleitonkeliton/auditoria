@@ -187,6 +187,24 @@ textarea { min-height: 80px; resize: vertical; }
 }
 
 .busca { margin-bottom: 12px; }
+.banner {
+  display: block;
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #fff4e5;
+  border: 1px solid #f0c27b;
+  color: #6b4500;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.banner:active { filter: brightness(0.97); }
+
+.card-titulo { margin: 0 0 8px; font-size: 1.05rem; }
+.dica { font-size: 0.85rem; color: var(--texto-suave); margin-top: 6px; min-height: 1em; }
+.centro { text-align: center; }
+a.btn { display: block; text-align: center; text-decoration: none; }
+
 .secao-titulo { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--texto-suave); margin: 18px 4px 8px; }
 .info { font-size: 0.85rem; color: var(--texto-suave); }
 
@@ -207,19 +225,25 @@ textarea { min-height: 80px; resize: vertical; }
 .toast.erro { background: var(--vermelho); }
 .toast.ok { background: var(--verde); }
 
+/* Leitor com a câmera do app: a câmera fica atrás da página, então tudo menos o leitor fica invisível. */
+html.leitor-ativo,
+html.leitor-ativo body { background: transparent !important; }
+html.leitor-ativo body { visibility: hidden; }
+html.leitor-ativo .scanner,
+html.leitor-ativo .toast { visibility: visible; }
+
 .scanner {
   position: fixed;
   inset: 0;
   z-index: 40;
-  background: #000;
+  background: transparent;
 }
-.scanner video { width: 100%; height: 100%; object-fit: cover; }
 .scanner-mira {
   position: absolute;
-  left: 8%;
-  right: 8%;
-  top: 38%;
-  height: 24%;
+  left: 10%;
+  right: 10%;
+  top: 34%;
+  height: 26%;
   border: 3px solid rgba(255,255,255,0.9);
   border-radius: 12px;
   box-shadow: 0 0 0 9999px rgba(0,0,0,0.35);
@@ -233,13 +257,23 @@ textarea { min-height: 80px; resize: vertical; }
   height: 2px;
   background: #ff5252;
 }
+.scanner-texto {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: calc(16% + env(safe-area-inset-top));
+  margin: 0;
+  text-align: center;
+  color: var(--branco);
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
 .scanner-rodape {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
+  display: grid;
+  gap: 10px;
   padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
-  text-align: center;
-  color: var(--branco);
 }
-.scanner-rodape p { margin: 0 0 12px; }

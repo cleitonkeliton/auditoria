@@ -2,12 +2,12 @@
 
 App Android para auditoria de computadores pelo **tombamento**. Os dados vão para uma planilha do **Google Sheets**.
 
-- Lê o código de barras do tombamento pela câmera, ou você digita o número.
-- Organiza por **setor**, com vários **subsetores** dentro de cada um.
+- Lê o código de barras do tombamento pela câmera com o leitor do Google (ML Kit), ou você digita o número.
+- Organiza por **setor**. Os computadores podem ficar direto no setor ou, se ele for dividido, em **subsetores**.
 - Em cada computador você anota a localização exata, a marca, o modelo (botões rápidos **Mini** e **Desktop**) e uma observação, se houver.
 - Funciona com **vários usuários**: cada registro guarda quem fez, e todos veem o que os outros registraram.
 - Avisa quando um tombamento já foi registrado.
-- Funciona **sem internet**: os dados ficam no celular e são enviados quando a conexão volta. O número amarelo no botão ↻ mostra quantas alterações ainda não foram enviadas.
+- Funciona **sem internet**: os dados ficam no celular e são enviados quando a conexão volta. O número amarelo no botão ↻ mostra quantas alterações ainda não foram enviadas. Se o envio falhar por outro motivo, aparece um aviso amarelo explicando o que fazer.
 
 ---
 
@@ -57,11 +57,17 @@ Para **atualizar** o app, baixe o novo `Auditoria.apk` pelo mesmo link e instale
 ## 3. Como usar
 
 1. **+ Novo setor** (ex.: "Financeiro") → abra o setor.
-2. **+ Novo subsetor** (ex.: "Sala 101") → abra o subsetor.
-3. **+ Computador** → toque em **📷 Ler** e aponte para o código de barras, ou digite o número. Preencha a localização, a marca, o modelo e a observação.
+2. Adicione os computadores:
+   - **Setor sem divisões:** toque em **+ Computador**. Ele fica direto no setor.
+   - **Setor dividido** (salas, por exemplo): toque em **+ Subsetor** (ex.: "Sala 101"), abra o subsetor e toque em **+ Computador**.
+3. No cadastro, toque em **📷 Ler** e aponte para o código de barras. Ele pode estar na horizontal ou na vertical. Se preferir, digite o número. Depois preencha a localização, a marca, o modelo e a observação.
 4. **Salvar e adicionar outro** mantém marca e modelo preenchidos, para agilizar o próximo cadastro.
 5. Na tela inicial, a busca encontra qualquer computador por tombamento, marca, modelo ou local.
 6. Toque em um computador para editar ou excluir.
+
+**Sobre o número do tombamento:** ele é guardado só com os dígitos, sem ponto e sem zeros à esquerda. Assim, `756.322` vira `756322` e `0008120441` (o que o código de barras da etiqueta contém) vira `8120441`. O número lido pela câmera e o digitado ficam iguais, e o aviso de tombamento repetido funciona com qualquer um dos dois.
+
+**Sobre o leitor:** na primeira vez, o Google baixa a tela de leitura dele (precisa de internet, só uma vez). Enquanto isso, ou sem internet, o app usa a própria câmera com o mesmo leitor, que tem botão de lanterna.
 
 ---
 

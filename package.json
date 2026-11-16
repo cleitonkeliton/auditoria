@@ -5,12 +5,14 @@
   "description": "App Android para auditoria de computadores (tombamento) com envio para Google Sheets",
   "scripts": {
     "copy-libs": "node scripts/copy-libs.mjs",
-    "sync": "npm run copy-libs && npx cap sync android"
+    "sync": "npm run copy-libs && npx cap sync android",
+    "test": "node --test test/*.test.mjs"
   },
   "dependencies": {
+    "@capacitor-mlkit/barcode-scanning": "^8.2.2",
     "@capacitor/android": "^8.5.3",
-    "@capacitor/core": "^8.5.3",
-    "@zxing/library": "^0.23.0"
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.5.3"
   },
   "devDependencies": {
     "@capacitor/cli": "^8.5.3"

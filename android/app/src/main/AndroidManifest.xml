@@ -24,6 +24,9 @@
 
         </activity>
 
+        <!-- Tela de leitura de código de barras do Google (ML Kit) -->
+        <meta-data android:name="com.google.mlkit.vision.DEPENDENCIES" android:value="barcode_ui" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"

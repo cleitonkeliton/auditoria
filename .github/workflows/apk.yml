@@ -30,6 +30,9 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
+      - name: Testar o script da planilha
+        run: npm test
+
       - name: Copiar o app para o projeto Android
         run: npm run sync
 
